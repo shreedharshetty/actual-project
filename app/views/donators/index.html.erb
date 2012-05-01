@@ -1,0 +1,17 @@
+<h1>Listing donators</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+  </tr>
+
+<% @donators.each do |donator| %>
+  <tr>
+    <td><%= donator.email %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Donator', new_donator_path %>

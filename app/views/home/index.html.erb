@@ -1,0 +1,56 @@
+<div date-role="Page">
+
+		
+<div>
+<ul data-dividertheme="f" data-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined ul-heading">Menu</li>
+<% if user_signed_in? %>
+	    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+	    	<%= link_to('Edit Profile/Update Profile', {:action=>"show", :controller=>"devise/registrations"}, :class => 'links') %>
+	    </li>
+	    <% else %>
+	    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+	    	<a href="#" class="links"> Welcome!!!</a>
+	    </li>
+</ul>    	
+<% end %>
+</div>
+
+<div>
+<ul data-dividertheme="f" data-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+<% if user_signed_in? %>
+	    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+	    	<%= link_to('Logout', {:action=>"destroy", :controller=>"devise/sessions"}, :method => 'delete', :class => 'links') %>
+	    </li>
+  	<% else %>
+    	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+    		<%= link_to('Login', {:action=>"new", :controller=>"devise/sessions"}, :class => 'links')  %>
+    	</li>
+</ul>    	
+<% end %>
+</div>
+<div>
+<ul data-dividertheme="f" data-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+ <% if user_signed_in? %>
+<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+<%= link_to('Edit Profile/Update Profile', {:action=>"edit", :controller=>"devise/registrations"}, :class => 'links') %>
+</li>
+<% else %>
+<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+<%= link_to('Register', new_user_registration_path, :class => 'links')  %>
+</li>
+</ul>
+<% end %>
+</div>
+<div>
+<ul data-dividertheme="f" data-theme="c" data-inset="true" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+ <% if user_signed_in? %>
+<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined">
+<%= link_to('Search', {:action => "index", :controller => 'donators'}, :class => 'links') %>
+</li>
+<% else %>
+<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-f ui-corner-top ui-btn-up-undefined"><a href="#" class="links">Login/register to search</a></li>
+</ul>
+<% end %>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<h2 class="action-heading">Profile</h1>
+
+<div class="content-primary"> 
+      <ul data-role="listview">
+         <li>
+            <%= image_tag("red-name-icon-256-x-256.jpg") %>
+            <h3>Name</h3>
+            <p><%= current_user.name %></p>
+         </li>
+         <li>
+            <%= image_tag("dep_5153979-Email-icon.jpg") %>
+            <h3>Email</h3>
+            <p><%= current_user.email %></p>
+         </li>
+         <li>
+            <%= image_tag("address_icon.jpg") %>
+
+            <h3>Address</h3>
+            <p><%= current_user.address %></p>
+         </li>
+         <li>
+            <%= image_tag("10455164-blood-group-type-medical-concept-represented-by-the-different-donor-and-recipients-of-hospital-trans.jpg") %>
+            <h3>Blood Group</h3>
+            <p><%= current_user.bloodgroup %></p>
+         </li>
+         <li>
+            <%= image_tag("phone-icon.gif") %>
+            <h3>Phone num</h3>
+            <p><%= current_user.pno %></p>
+         </li>
+         <li><%= link_to('Edit Profile/Update Profile', edit_user_registration_path) %></li>
+      </ul>
+      </div><!--/content-primary -->
+      
+         
